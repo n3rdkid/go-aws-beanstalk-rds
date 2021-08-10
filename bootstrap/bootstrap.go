@@ -7,6 +7,7 @@ import (
 	"go-aws-beanstalk-rds/api/routes"
 	"go-aws-beanstalk-rds/api/service"
 	"go-aws-beanstalk-rds/lib"
+	"log"
 
 	"go.uber.org/fx"
 )
@@ -35,7 +36,10 @@ func bootstrap(
 			conn.SetMaxOpenConns(10)
 			go func() {
 				routes.Setup()
-				handler.Gin.Run(":" + env.ServerPort)
+				err := handler.Gin.Run(":" + env.ServerPort)
+				if err != nil {
+					log.Print("failed to start gin")
+				}
 			}()
 			return nil
 		},

@@ -17,8 +17,8 @@ linters:
     - gosimple
     - govet
     - ineffassign
-    - interfacer
-    - lll
+    # - interfacer
+    # - lll
     - misspell
     - nakedret
     - rowserrcheck
@@ -30,4 +30,4 @@ linters:
     - unparam
     - unused
     - varcheck
-    - whitespace
+    # - whitespace
