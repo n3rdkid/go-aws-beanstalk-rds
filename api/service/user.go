@@ -22,7 +22,7 @@ func NewUserService(repo repository.UserRepository) UserService {
 func (s *UserService) Save(user models.User) (models.User, error) {
 	_, err := s.userRepository.GetByID(user.ID)
 	if err == nil {
-		return user, errors.New("User already exists")
+		return user, errors.New("user already exists")
 	}
 	return s.userRepository.Save(user)
 }
