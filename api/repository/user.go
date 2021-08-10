@@ -33,7 +33,7 @@ func (u *UserRepository) Save(user models.User) (models.User, error) {
 func (u *UserRepository) GetAll() (users []models.User, err error) {
 	log.Print("UserRepository :: GetAll")
 	log.Println(users)
-	return users, u.db.DB.Preload("WishLists").Find(&users).Error
+	return users, u.db.DB.Find(&users).Error
 }
 
 // GetByID ->
