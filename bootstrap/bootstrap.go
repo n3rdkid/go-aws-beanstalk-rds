@@ -44,7 +44,10 @@ func bootstrap(
 			return nil
 		},
 		OnStop: func(context.Context) error {
-			conn.Close()
+			err := conn.Close()
+			if err != nil {
+				log.Print("failed to stop db connection")
+			}
 			return nil
 		},
 	})
