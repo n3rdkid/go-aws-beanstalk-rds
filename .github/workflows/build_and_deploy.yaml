@@ -92,11 +92,11 @@ jobs:
           DB_PASSWORD=${{ secrets.DB_PASS }}" > .env
 
       - name: Build the repository
-        run: go build main.go
+        run: go build application.go
 
       - name: Start the service
         run: |
-          ./main &
+          ./application &
 
       # - name: Validate if the service is working or not via health check api
       #   run: |
