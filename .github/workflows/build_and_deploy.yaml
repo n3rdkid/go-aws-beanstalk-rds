@@ -88,8 +88,8 @@ jobs:
           DB_HOST=${{ secrets.DB_HOST }}
           DB_PORT=${{ secrets.DB_PORT }}
           DB_NAME=aws-${{ secrets.DB_NAME }}
-          DB_USERNAME=${{ secrets.DB_USER }}
-          DB_PASSWORD=${{ secrets.DB_PASS }}" > .env
+          DB_USER=${{ secrets.DB_USER }}
+          DB_PASS=${{ secrets.DB_PASS }}" > .env
 
       - name: Build the repository
         run: go build application.go
