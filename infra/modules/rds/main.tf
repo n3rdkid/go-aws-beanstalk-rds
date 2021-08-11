@@ -12,7 +12,12 @@ resource "aws_db_instance" "default" {
   port = var.rds_port
   username             = var.rds_username
   password             = var.rds_password
+  # CHECK THIS
   parameter_group_name = var.rds_parameter_group_name
+  # NEED TO RESEARCH MORE ABOUT THESE THEREE
+  db_subnet_group_name = var.rds_db_subnet_group_name
+  # NEED MORE RESEARCH WHY EBS Inbound rules need to be addded to default 
+  vpc_security_group_ids = var.rds_vpc_security_group_ids
   skip_final_snapshot  = true
   deletion_protection = true
 }

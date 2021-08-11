@@ -26,3 +26,9 @@ variable "rds_username" {
 variable "rds_password" {
   type = string
 }
+variable "rds_vpc_security_group_ids" {
+  type = list
+}
+variable "rds_db_subnet_group_name" {
+  type = string
+}
