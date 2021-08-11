@@ -22,6 +22,7 @@ func NewDatabase(env Env) Database {
 	dbname := env.DBName
 	url := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local", username, password, host, port, dbname)
 	db, err := gorm.Open(mysql.Open(url), &gorm.Config{})
+	_ = db.Exec("CREATE DATABASE IF NOT EXISTS " + env.DBName + ";")
 	log.Println("Url: ", url)
 	if err != nil {
 		log.Println("Url: ", url)
