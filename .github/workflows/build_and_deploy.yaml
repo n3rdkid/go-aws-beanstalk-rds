@@ -1,4 +1,4 @@
-name: Build the rdw-api application
+name: Build the application
 
 on:
   push:
