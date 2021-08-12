@@ -9,6 +9,7 @@ module "beanstalk_environment_go_infra_dev" {
       aws_elastic_beanstalk_application_name = module.beanstalk_app_project.beanstalk_application_name
       beanstalk_environment_name = "go-infra-dev"   
       beanstalk_environment_solution_stack_name=var.beanstalk_environment_solution_stack_name
+      beanstalk_environment_security_group = var.beanstalk_environment_security_group
 }
 
 module "rds_go_infra_dev" {

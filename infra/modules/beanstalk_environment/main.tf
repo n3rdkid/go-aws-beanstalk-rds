@@ -11,4 +11,9 @@ resource "aws_elastic_beanstalk_environment" "beanstalk_environment" {
     name      = "IamInstanceProfile"
     value   = "aws-elasticbeanstalk-ec2-role"
     }
+    setting {
+    namespace = "aws:autoscaling:launchconfiguration"
+    name      = "SecurityGroups"
+    value   = var.beanstalk_environment_security_group
+    }
 }

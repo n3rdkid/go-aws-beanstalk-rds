@@ -12,3 +12,8 @@ variable "beanstalk_environment_solution_stack_name" {
   description = "Beanstalk environment solution stack name"
   
 }
+variable "beanstalk_environment_security_group" {
+  type = string
+  description = "Security Group matching the RDS Ingress"
+  
+}
