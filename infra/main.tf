@@ -22,10 +22,7 @@ module "rds_go_infra_dev" {
   rds_port = var.rds_port
   rds_username             = var.rds_username
   rds_password             = var.rds_password
-  # CHECK THIS
   rds_parameter_group_name = var.rds_parameter_group_name
-  # NEED TO RESEARCH MORE ABOUT THESE THEREE
   rds_db_subnet_group_name = var.rds_db_subnet_group_name
-  # NEED MORE RESEARCH WHY EBS Inbound rules need to be addded to default 
   rds_vpc_security_group_ids = var.rds_vpc_security_group_ids  
 }
