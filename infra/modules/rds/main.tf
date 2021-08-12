@@ -19,5 +19,5 @@ resource "aws_db_instance" "default" {
   # NEED MORE RESEARCH WHY EBS Inbound rules need to be addded to default 
   vpc_security_group_ids = var.rds_vpc_security_group_ids
   skip_final_snapshot  = true
-  deletion_protection = true 
+  # deletion_protection = true 
 }
