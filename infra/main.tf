@@ -12,23 +12,23 @@ module "beanstalk_environment_go_infra_dev" {
 }
 
 module "rds_go_infra_dev" {
-      source = "./modules/rds"
-      allocated_storage    = 20
-  engine               = "mysql"
-  engine_version       = "8.0"
-  instance_class       = "db.t2.micro"
+  source = "./modules/rds"
+  allocated_storage    = var.rds_allocated_storage
+  engine               = var.rds_engine
+  engine_version       = var.rds_engine_version
+  instance_class       = var.rds_instance_class
   apply_immediately = true
-  name                 = "aws_test"
-  port = 3306
-  username             = "FAKE_USER"
-  password             = "FAKE_PASSWORD"
+  name                 = var.rds_db_name
+  port = var.rds_port
+  username             = var.rds_username
+  password             = var.rds_password
   # CHECK THIS
-#   parameter_group_name = var.rds_parameter_group_name
+  parameter_group_name = var.rds_parameter_group_name
   # NEED TO RESEARCH MORE ABOUT THESE THEREE
-  db_subnet_group_name = "default-vpc-*"
+  db_subnet_group_name = var.rds_db_subnet_group_name
   # NEED MORE RESEARCH WHY EBS Inbound rules need to be addded to default 
-  vpc_security_group_ids = ["CREATE YOUR OWN SECURITY GROUP MAY BE" ]
+  vpc_security_group_ids = var.rds_vpc_security_group_ids
   skip_final_snapshot  = true
-  deletion_protection = true
+  deletion_protection = true 
     
 }
