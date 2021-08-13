@@ -4,7 +4,7 @@ terraform {
 }
 
 resource "aws_iam_role" "beanstalk_service" {
-  name = "beeanstalk_service"
+  name = var.aws_elastic_beanstalk_service_name
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",

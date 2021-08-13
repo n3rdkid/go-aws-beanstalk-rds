@@ -8,7 +8,9 @@ require (
 	github.com/coreos/go-etcd v2.0.0+incompatible // indirect
 	github.com/gin-contrib/cors v1.3.1 // indirect
 	github.com/gin-gonic/gin v1.7.3 // indirect
+	github.com/gruntwork-io/terratest v0.37.5 // indirect
 	github.com/spf13/viper v1.8.1 // indirect
+	github.com/stretchr/testify v1.7.0 // indirect
 	github.com/xordataexchange/crypt v0.0.3-0.20170626215501-b2862e3d0a77 // indirect
 	go.uber.org/fx v1.13.1 // indirect
 	gorm.io/driver/mysql v1.1.1 // indirect
